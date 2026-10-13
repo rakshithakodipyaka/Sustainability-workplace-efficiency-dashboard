@@ -80,7 +80,7 @@ Run all commands from the project root folder.
 **Port already in use?** The port is set in `vite.config.js` (`server.port = 3000`).
 Close the other process or change `3000` to another value such as `5173`, then run
 `npm run dev` again.
-
+  
 ---
 
 # DEMO LOGIN CREDENTIALS
