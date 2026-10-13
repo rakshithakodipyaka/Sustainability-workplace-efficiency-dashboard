@@ -1,0 +1,146 @@
+[
+  {
+    "employeeId": "EMP001",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 6.5, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "office", "productiveHours": 6.8, "expectedProductiveHours": 7, "tasksCompleted": 9, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 6.4, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "office", "productiveHours": 6.6, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "office", "productiveHours": 6.2, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.5 }
+    ]
+  },
+  {
+    "employeeId": "EMP002",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 6.0, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "office", "productiveHours": 6.2, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "remote", "productiveHours": 5.8, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "office", "productiveHours": 6.1, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "office", "productiveHours": 5.9, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "EMP003",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 5.5, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "remote", "productiveHours": 5.2, "expectedProductiveHours": 7, "tasksCompleted": 5, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 5.6, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 0, "learningHours": 0.5 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "remote", "productiveHours": 5.4, "expectedProductiveHours": 7, "tasksCompleted": 5, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "office", "productiveHours": 5.8, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "EMP004",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 5.0, "expectedProductiveHours": 7, "tasksCompleted": 5, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "office", "productiveHours": 5.2, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 4.8, "expectedProductiveHours": 7, "tasksCompleted": 4, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "office", "productiveHours": 5.1, "expectedProductiveHours": 7, "tasksCompleted": 5, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "office", "productiveHours": 4.9, "expectedProductiveHours": 7, "tasksCompleted": 4, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "EMP005",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "remote", "productiveHours": 7.0, "expectedProductiveHours": 7, "tasksCompleted": 9, "meetingsAttended": 2, "learningHours": 1.0 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "office", "productiveHours": 7.2, "expectedProductiveHours": 7, "tasksCompleted": 10, "meetingsAttended": 2, "learningHours": 1.0 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "remote", "productiveHours": 6.9, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 2, "learningHours": 1.0 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "office", "productiveHours": 7.1, "expectedProductiveHours": 7, "tasksCompleted": 9, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "remote", "productiveHours": 6.8, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 2, "learningHours": 1.0 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "EMP006",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 6.5, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "office", "productiveHours": 6.6, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 6.4, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "office", "productiveHours": 6.7, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "remote", "productiveHours": 6.3, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "EMP007",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 5.5, "expectedProductiveHours": 7, "tasksCompleted": 5, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "remote", "productiveHours": 5.3, "expectedProductiveHours": 7, "tasksCompleted": 5, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 5.6, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "remote", "productiveHours": 5.4, "expectedProductiveHours": 7, "tasksCompleted": 5, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "office", "productiveHours": 5.7, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "EMP008",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 7.0, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "office", "productiveHours": 7.2, "expectedProductiveHours": 7, "tasksCompleted": 9, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 6.9, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "office", "productiveHours": 7.1, "expectedProductiveHours": 7, "tasksCompleted": 9, "meetingsAttended": 2, "learningHours": 1.0 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "office", "productiveHours": 6.8, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "EMP009",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 4.5, "expectedProductiveHours": 7, "tasksCompleted": 4, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "remote", "productiveHours": 4.2, "expectedProductiveHours": 7, "tasksCompleted": 3, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 4.8, "expectedProductiveHours": 7, "tasksCompleted": 5, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "remote", "productiveHours": 4.4, "expectedProductiveHours": 7, "tasksCompleted": 4, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "remote", "productiveHours": 4.6, "expectedProductiveHours": 7, "tasksCompleted": 4, "meetingsAttended": 1, "learningHours": 0.0 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "EMP010",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "remote", "productiveHours": 5.9, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "office", "productiveHours": 6.2, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 6.0, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "office", "productiveHours": 6.1, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "remote", "productiveHours": 5.8, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "MGR001",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 6.6, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "office", "productiveHours": 6.5, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 6.7, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 2, "learningHours": 1.0 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "office", "productiveHours": 6.4, "expectedProductiveHours": 7, "tasksCompleted": 5, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "remote", "productiveHours": 6.3, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  },
+  {
+    "employeeId": "MGR002",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "workMode": "office", "productiveHours": 7.1, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 2, "learningHours": 1.0 },
+      { "date": "2026-10-06", "day": "Tuesday", "workMode": "office", "productiveHours": 7.0, "expectedProductiveHours": 7, "tasksCompleted": 8, "meetingsAttended": 1, "learningHours": 0.5 },
+      { "date": "2026-10-07", "day": "Wednesday", "workMode": "office", "productiveHours": 7.2, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-08", "day": "Thursday", "workMode": "office", "productiveHours": 6.9, "expectedProductiveHours": 7, "tasksCompleted": 6, "meetingsAttended": 2, "learningHours": 0.5 },
+      { "date": "2026-10-09", "day": "Friday", "workMode": "office", "productiveHours": 6.8, "expectedProductiveHours": 7, "tasksCompleted": 7, "meetingsAttended": 1, "learningHours": 1.0 },
+      { "date": "2026-10-10", "day": "Saturday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 },
+      { "date": "2026-10-11", "day": "Sunday", "workMode": "off", "productiveHours": 0, "expectedProductiveHours": 0, "tasksCompleted": 0, "meetingsAttended": 0, "learningHours": 0.0 }
+    ]
+  }
+]

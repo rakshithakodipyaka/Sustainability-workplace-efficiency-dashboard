@@ -1,0 +1,182 @@
+[
+  {
+    "employeeId": "EMP001",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": false }
+    ]
+  },
+  {
+    "employeeId": "EMP002",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": true }
+    ]
+  },
+  {
+    "employeeId": "EMP003",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": false }
+    ]
+  },
+  {
+    "employeeId": "EMP004",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": false }
+    ]
+  },
+  {
+    "employeeId": "EMP005",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": false }
+    ]
+  },
+  {
+    "employeeId": "EMP006",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": true }
+    ]
+  },
+  {
+    "employeeId": "EMP007",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": false }
+    ]
+  },
+  {
+    "employeeId": "EMP008",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": false }
+    ]
+  },
+  {
+    "employeeId": "EMP009",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": false },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": false }
+    ]
+  },
+  {
+    "employeeId": "EMP010",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": true }
+    ]
+  },
+  {
+    "employeeId": "MGR001",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": true }
+    ]
+  },
+  {
+    "employeeId": "MGR002",
+    "activities": [
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT001", "name": "Team Collaboration Session", "category": "collaboration", "available": true, "attended": true },
+      { "date": "2026-10-05", "day": "Monday", "activityId": "ACT002", "name": "Wellness Walk", "category": "wellness", "available": true, "attended": false },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT003", "name": "Knowledge Sharing Session", "category": "learning", "available": true, "attended": true },
+      { "date": "2026-10-06", "day": "Tuesday", "activityId": "ACT004", "name": "Employee Volunteering", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT005", "name": "Team Building Activity", "category": "team", "available": true, "attended": true },
+      { "date": "2026-10-07", "day": "Wednesday", "activityId": "ACT006", "name": "Wellness Yoga", "category": "wellness", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT007", "name": "Innovation Hackathon", "category": "innovation", "available": true, "attended": true },
+      { "date": "2026-10-08", "day": "Thursday", "activityId": "ACT008", "name": "Mentoring Session", "category": "mentorship", "available": true, "attended": false },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT009", "name": "Friday Fun & Learn", "category": "social", "available": true, "attended": true },
+      { "date": "2026-10-09", "day": "Friday", "activityId": "ACT010", "name": "Cross-team Mixer", "category": "networking", "available": true, "attended": true }
+    ]
+  }
+]

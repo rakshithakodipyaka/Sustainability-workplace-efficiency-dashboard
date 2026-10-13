@@ -1,0 +1,209 @@
+{
+  "courses": [
+    { "courseId": "CRS001", "title": "Data Analytics Fundamentals", "totalHours": 8, "category": "Technical" },
+    { "courseId": "CRS002", "title": "Cloud Computing Essentials", "totalHours": 10, "category": "Technical" },
+    { "courseId": "CRS003", "title": "AI and Machine Learning", "totalHours": 12, "category": "Technical" },
+    { "courseId": "CRS004", "title": "Sustainable Workplace Practices", "totalHours": 4, "category": "Sustainability" },
+    { "courseId": "CRS005", "title": "Communication and Leadership", "totalHours": 6, "category": "Soft Skills" },
+    { "courseId": "CRS006", "title": "Cybersecurity Awareness", "totalHours": 5, "category": "Security" }
+  ],
+  "weeklyLearningTarget": 3,
+  "enrollments": [
+    {
+      "employeeId": "EMP001",
+      "enrolled": [
+        { "courseId": "CRS001", "progress": 100, "hoursCompleted": 8, "status": "completed", "startDate": "2026-09-01" },
+        { "courseId": "CRS003", "progress": 60, "hoursCompleted": 7.2, "status": "in-progress", "startDate": "2026-09-15" },
+        { "courseId": "CRS005", "progress": 30, "hoursCompleted": 1.8, "status": "in-progress", "startDate": "2026-10-01" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 0.5 },
+        { "date": "2026-10-06", "hours": 1.0 },
+        { "date": "2026-10-07", "hours": 0.5 },
+        { "date": "2026-10-08", "hours": 0.5 },
+        { "date": "2026-10-09", "hours": 1.0 },
+        { "date": "2026-10-10", "hours": 0 },
+        { "date": "2026-10-11", "hours": 0.5 }
+      ]
+    },
+    {
+      "employeeId": "EMP002",
+      "enrolled": [
+        { "courseId": "CRS002", "progress": 50, "hoursCompleted": 5.0, "status": "in-progress", "startDate": "2026-09-10" },
+        { "courseId": "CRS006", "progress": 40, "hoursCompleted": 2.0, "status": "in-progress", "startDate": "2026-09-20" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 0.5 },
+        { "date": "2026-10-06", "hours": 0.5 },
+        { "date": "2026-10-07", "hours": 0.0 },
+        { "date": "2026-10-08", "hours": 0.5 },
+        { "date": "2026-10-09", "hours": 0.5 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "EMP003",
+      "enrolled": [
+        { "courseId": "CRS004", "progress": 100, "hoursCompleted": 4.0, "status": "completed", "startDate": "2026-09-05" },
+        { "courseId": "CRS001", "progress": 40, "hoursCompleted": 3.2, "status": "in-progress", "startDate": "2026-09-25" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 0.5 },
+        { "date": "2026-10-06", "hours": 0.5 },
+        { "date": "2026-10-07", "hours": 0.5 },
+        { "date": "2026-10-08", "hours": 0.0 },
+        { "date": "2026-10-09", "hours": 1.0 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "EMP004",
+      "enrolled": [
+        { "courseId": "CRS006", "progress": 20, "hoursCompleted": 1.0, "status": "in-progress", "startDate": "2026-10-01" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 0.0 },
+        { "date": "2026-10-06", "hours": 0.5 },
+        { "date": "2026-10-07", "hours": 0.0 },
+        { "date": "2026-10-08", "hours": 0.5 },
+        { "date": "2026-10-09", "hours": 0.0 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "EMP005",
+      "enrolled": [
+        { "courseId": "CRS001", "progress": 100, "hoursCompleted": 8.0, "status": "completed", "startDate": "2026-08-15" },
+        { "courseId": "CRS004", "progress": 100, "hoursCompleted": 4.0, "status": "completed", "startDate": "2026-09-01" },
+        { "courseId": "CRS002", "progress": 60, "hoursCompleted": 6.0, "status": "in-progress", "startDate": "2026-09-15" },
+        { "courseId": "CRS003", "progress": 40, "hoursCompleted": 4.8, "status": "in-progress", "startDate": "2026-10-01" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 1.0 },
+        { "date": "2026-10-06", "hours": 1.0 },
+        { "date": "2026-10-07", "hours": 1.0 },
+        { "date": "2026-10-08", "hours": 1.0 },
+        { "date": "2026-10-09", "hours": 1.0 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "EMP006",
+      "enrolled": [
+        { "courseId": "CRS005", "progress": 100, "hoursCompleted": 6.0, "status": "completed", "startDate": "2026-09-01" },
+        { "courseId": "CRS002", "progress": 50, "hoursCompleted": 5.0, "status": "in-progress", "startDate": "2026-09-18" },
+        { "courseId": "CRS004", "progress": 30, "hoursCompleted": 1.2, "status": "in-progress", "startDate": "2026-10-02" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 0.5 },
+        { "date": "2026-10-06", "hours": 1.0 },
+        { "date": "2026-10-07", "hours": 0.5 },
+        { "date": "2026-10-08", "hours": 1.0 },
+        { "date": "2026-10-09", "hours": 0.5 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "EMP007",
+      "enrolled": [
+        { "courseId": "CRS001", "progress": 40, "hoursCompleted": 3.2, "status": "in-progress", "startDate": "2026-09-20" },
+        { "courseId": "CRS005", "progress": 30, "hoursCompleted": 1.8, "status": "in-progress", "startDate": "2026-10-01" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 0.5 },
+        { "date": "2026-10-06", "hours": 0.0 },
+        { "date": "2026-10-07", "hours": 0.5 },
+        { "date": "2026-10-08", "hours": 0.0 },
+        { "date": "2026-10-09", "hours": 0.5 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "EMP008",
+      "enrolled": [
+        { "courseId": "CRS002", "progress": 100, "hoursCompleted": 10.0, "status": "completed", "startDate": "2026-08-20" },
+        { "courseId": "CRS006", "progress": 100, "hoursCompleted": 5.0, "status": "completed", "startDate": "2026-09-10" },
+        { "courseId": "CRS003", "progress": 55, "hoursCompleted": 6.6, "status": "in-progress", "startDate": "2026-09-25" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 1.0 },
+        { "date": "2026-10-06", "hours": 1.0 },
+        { "date": "2026-10-07", "hours": 0.5 },
+        { "date": "2026-10-08", "hours": 1.0 },
+        { "date": "2026-10-09", "hours": 1.0 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "EMP009",
+      "enrolled": [
+        { "courseId": "CRS004", "progress": 15, "hoursCompleted": 0.6, "status": "in-progress", "startDate": "2026-10-01" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 0.0 },
+        { "date": "2026-10-06", "hours": 0.5 },
+        { "date": "2026-10-07", "hours": 0.0 },
+        { "date": "2026-10-08", "hours": 0.0 },
+        { "date": "2026-10-09", "hours": 0.0 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "EMP010",
+      "enrolled": [
+        { "courseId": "CRS006", "progress": 100, "hoursCompleted": 5.0, "status": "completed", "startDate": "2026-09-01" },
+        { "courseId": "CRS001", "progress": 10, "hoursCompleted": 0.8, "status": "in-progress", "startDate": "2026-10-02" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 0.5 },
+        { "date": "2026-10-06", "hours": 0.5 },
+        { "date": "2026-10-07", "hours": 0.5 },
+        { "date": "2026-10-08", "hours": 0.5 },
+        { "date": "2026-10-09", "hours": 0.5 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "MGR001",
+      "enrolled": [
+        { "courseId": "CRS005", "progress": 100, "hoursCompleted": 6.0, "status": "completed", "startDate": "2026-08-15" },
+        { "courseId": "CRS003", "progress": 30, "hoursCompleted": 3.6, "status": "in-progress", "startDate": "2026-09-20" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 0.5 },
+        { "date": "2026-10-06", "hours": 0.5 },
+        { "date": "2026-10-07", "hours": 1.0 },
+        { "date": "2026-10-08", "hours": 0.5 },
+        { "date": "2026-10-09", "hours": 0.5 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    },
+    {
+      "employeeId": "MGR002",
+      "enrolled": [
+        { "courseId": "CRS004", "progress": 100, "hoursCompleted": 4.0, "status": "completed", "startDate": "2026-08-25" },
+        { "courseId": "CRS005", "progress": 100, "hoursCompleted": 6.0, "status": "completed", "startDate": "2026-09-12" },
+        { "courseId": "CRS001", "progress": 40, "hoursCompleted": 3.2, "status": "in-progress", "startDate": "2026-09-28" }
+      ],
+      "weeklyLearningHours": [
+        { "date": "2026-10-05", "hours": 1.0 },
+        { "date": "2026-10-06", "hours": 0.5 },
+        { "date": "2026-10-07", "hours": 1.0 },
+        { "date": "2026-10-08", "hours": 0.5 },
+        { "date": "2026-10-09", "hours": 1.0 },
+        { "date": "2026-10-10", "hours": 0.0 },
+        { "date": "2026-10-11", "hours": 0.0 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+[
+  {
+    "employeeId": "HR001",
+    "name": "Priya Sharma",
+    "role": "HR",
+    "password": "hr@demo123",
+    "email": "priya.sharma@company.com",
+    "department": "Human Resources",
+    "avatar": "PS"
+  },
+  {
+    "employeeId": "MGR001",
+    "name": "Rahul Verma",
+    "role": "Manager",
+    "password": "mgr@demo123",
+    "email": "rahul.verma@company.com",
+    "department": "Engineering",
+    "team": "Alpha",
+    "directReports": [
+      "EMP001",
+      "EMP002",
+      "EMP003",
+      "EMP004",
+      "EMP005"
+    ],
+    "avatar": "RV"
+  },
+  {
+    "employeeId": "MGR002",
+    "name": "Ananya Iyer",
+    "role": "Manager",
+    "password": "mgr@demo123",
+    "email": "ananya.iyer@company.com",
+    "department": "Product",
+    "team": "Beta",
+    "directReports": [
+      "EMP006",
+      "EMP007",
+      "EMP008",
+      "EMP009",
+      "EMP010"
+    ],
+    "avatar": "AI"
+  },
+  {
+    "employeeId": "EMP001",
+    "name": "Aditi Reddy",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "aditi.reddy@company.com",
+    "department": "Engineering",
+    "team": "Alpha",
+    "managerId": "MGR001",
+    "avatar": "AR"
+  },
+  {
+    "employeeId": "EMP002",
+    "name": "Arjun Kumar",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "arjun.kumar@company.com",
+    "department": "Engineering",
+    "team": "Alpha",
+    "managerId": "MGR001",
+    "avatar": "AK"
+  },
+  {
+    "employeeId": "EMP003",
+    "name": "Sneha Rao",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "sneha.rao@company.com",
+    "department": "Engineering",
+    "team": "Alpha",
+    "managerId": "MGR001",
+    "avatar": "SR"
+  },
+  {
+    "employeeId": "EMP004",
+    "name": "Kiran Patel",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "kiran.patel@company.com",
+    "department": "Engineering",
+    "team": "Alpha",
+    "managerId": "MGR001",
+    "avatar": "KP"
+  },
+  {
+    "employeeId": "EMP005",
+    "name": "Meera Singh",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "meera.singh@company.com",
+    "department": "Engineering",
+    "team": "Alpha",
+    "managerId": "MGR001",
+    "avatar": "MS"
+  },
+  {
+    "employeeId": "EMP006",
+    "name": "Vikram Das",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "vikram.das@company.com",
+    "department": "Product",
+    "team": "Beta",
+    "managerId": "MGR002",
+    "avatar": "VD"
+  },
+  {
+    "employeeId": "EMP007",
+    "name": "Neha Gupta",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "neha.gupta@company.com",
+    "department": "Product",
+    "team": "Beta",
+    "managerId": "MGR002",
+    "avatar": "NG"
+  },
+  {
+    "employeeId": "EMP008",
+    "name": "Rohan Mehta",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "rohan.mehta@company.com",
+    "department": "Product",
+    "team": "Beta",
+    "managerId": "MGR002",
+    "avatar": "RM"
+  },
+  {
+    "employeeId": "EMP009",
+    "name": "Pooja Nair",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "pooja.nair@company.com",
+    "department": "Product",
+    "team": "Beta",
+    "managerId": "MGR002",
+    "avatar": "PN"
+  },
+  {
+    "employeeId": "EMP010",
+    "name": "Aditya Joshi",
+    "role": "Employee",
+    "password": "emp@demo123",
+    "email": "aditya.joshi@company.com",
+    "department": "Product",
+    "team": "Beta",
+    "managerId": "MGR002",
+    "avatar": "AJ"
+  }
+]

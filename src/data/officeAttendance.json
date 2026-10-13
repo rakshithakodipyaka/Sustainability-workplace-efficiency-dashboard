@@ -1,0 +1,146 @@
+[
+  {
+    "employeeId": "EMP001",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "09:05", "tapOut": "18:10", "hoursInOffice": 9.08 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": true, "tapIn": "08:58", "tapOut": "18:02", "hoursInOffice": 9.07 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "09:02", "tapOut": "18:15", "hoursInOffice": 9.22 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": true, "tapIn": "08:55", "tapOut": "18:05", "hoursInOffice": 9.17 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": true, "tapIn": "09:00", "tapOut": "17:55", "hoursInOffice": 8.92 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "EMP002",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "09:12", "tapOut": "18:00", "hoursInOffice": 8.80 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": true, "tapIn": "09:15", "tapOut": "18:05", "hoursInOffice": 8.83 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": true, "tapIn": "09:10", "tapOut": "18:12", "hoursInOffice": 9.03 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": true, "tapIn": "09:20", "tapOut": "17:50", "hoursInOffice": 8.50 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "EMP003",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "09:45", "tapOut": "18:30", "hoursInOffice": 8.75 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "09:35", "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": true, "tapIn": "09:40", "tapOut": "18:15", "hoursInOffice": 8.58 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "EMP004",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "09:00", "tapOut": "17:30", "hoursInOffice": 8.50 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": true, "tapIn": "08:55", "tapOut": "17:35", "hoursInOffice": 8.67 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "09:05", "tapOut": "17:30", "hoursInOffice": 8.42 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": true, "tapIn": "09:00", "tapOut": "17:40", "hoursInOffice": 8.67 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": true, "tapIn": "08:50", "tapOut": "17:20", "hoursInOffice": 8.50 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "EMP005",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": true, "tapIn": "09:15", "tapOut": "18:00", "hoursInOffice": 8.75 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": true, "tapIn": "09:10", "tapOut": "18:10", "hoursInOffice": 9.00 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "EMP006",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "09:08", "tapOut": "18:05", "hoursInOffice": 8.95 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": true, "tapIn": "09:12", "tapOut": "18:00", "hoursInOffice": 8.80 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "09:05", "tapOut": "18:10", "hoursInOffice": 9.08 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": true, "tapIn": "09:15", "tapOut": "18:15", "hoursInOffice": 9.00 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "EMP007",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "09:20", "tapOut": "18:00", "hoursInOffice": 8.67 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "09:25", "tapOut": "18:10", "hoursInOffice": 8.75 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": true, "tapIn": "09:15", "tapOut": "17:45", "hoursInOffice": 8.50 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "EMP008",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "08:30", "tapOut": "17:35", "hoursInOffice": 9.08 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": true, "tapIn": "08:25", "tapOut": "17:40", "hoursInOffice": 9.25 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "08:32", "tapOut": "17:30", "hoursInOffice": 8.97 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": true, "tapIn": "08:28", "tapOut": "17:45", "hoursInOffice": 9.28 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": true, "tapIn": "08:30", "tapOut": "17:15", "hoursInOffice": 8.75 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "EMP009",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "09:30", "tapOut": "17:45", "hoursInOffice": 8.25 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "09:25", "tapOut": "17:50", "hoursInOffice": 8.42 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "EMP010",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": true, "tapIn": "09:10", "tapOut": "18:00", "hoursInOffice": 8.83 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "09:15", "tapOut": "18:10", "hoursInOffice": 8.92 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": true, "tapIn": "09:05", "tapOut": "17:55", "hoursInOffice": 8.83 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "MGR001",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "08:50", "tapOut": "18:15", "hoursInOffice": 9.42 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": true, "tapIn": "08:55", "tapOut": "18:10", "hoursInOffice": 9.25 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "09:00", "tapOut": "18:20", "hoursInOffice": 9.33 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": true, "tapIn": "08:52", "tapOut": "18:05", "hoursInOffice": 9.22 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  },
+  {
+    "employeeId": "MGR002",
+    "records": [
+      { "date": "2026-10-05", "day": "Monday", "planned": true, "present": true, "tapIn": "08:55", "tapOut": "18:20", "hoursInOffice": 9.42 },
+      { "date": "2026-10-06", "day": "Tuesday", "planned": true, "present": true, "tapIn": "08:50", "tapOut": "18:15", "hoursInOffice": 9.42 },
+      { "date": "2026-10-07", "day": "Wednesday", "planned": true, "present": true, "tapIn": "08:52", "tapOut": "18:30", "hoursInOffice": 9.63 },
+      { "date": "2026-10-08", "day": "Thursday", "planned": true, "present": true, "tapIn": "08:58", "tapOut": "18:10", "hoursInOffice": 9.20 },
+      { "date": "2026-10-09", "day": "Friday", "planned": true, "present": true, "tapIn": "09:00", "tapOut": "18:00", "hoursInOffice": 9.00 },
+      { "date": "2026-10-10", "day": "Saturday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 },
+      { "date": "2026-10-11", "day": "Sunday", "planned": false, "present": false, "tapIn": null, "tapOut": null, "hoursInOffice": 0 }
+    ]
+  }
+]

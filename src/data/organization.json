@@ -1,0 +1,62 @@
+{
+  "name": "GreenTech Solutions Pvt. Ltd.",
+  "totalEmployees": 10,
+  "totalManagers": 2,
+  "hrCount": 1,
+  "departments": [
+    "Engineering",
+    "Product",
+    "Human Resources"
+  ],
+  "teams": [
+    {
+      "name": "Alpha",
+      "managerId": "MGR001",
+      "department": "Engineering",
+      "members": [
+        "EMP001",
+        "EMP002",
+        "EMP003",
+        "EMP004",
+        "EMP005"
+      ]
+    },
+    {
+      "name": "Beta",
+      "managerId": "MGR002",
+      "department": "Product",
+      "members": [
+        "EMP006",
+        "EMP007",
+        "EMP008",
+        "EMP009",
+        "EMP010"
+      ]
+    }
+  ],
+  "officeCapacity": 20,
+  "weeklyWorkDays": 5,
+  "weekDates": [
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11"
+  ],
+  "weekDayNames": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ],
+  "sustainabilityConfig": {
+    "estimatedCommuteDistanceKm": 25,
+    "co2EmissionFactorPerKm": 0.21,
+    "co2EmissionNote": "Estimated using average car CO2 emission factor of 0.21 kg/km (round trip = 50km). This is an illustrative estimate only."
+  }
+}

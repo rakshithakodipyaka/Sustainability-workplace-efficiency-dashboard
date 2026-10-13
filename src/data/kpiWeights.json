@@ -1,0 +1,18 @@
+{
+  "weights": {
+    "officeUtilization": 0.20,
+    "meetingEffectiveness": 0.20,
+    "employeeEngagement": 0.20,
+    "learningParticipation": 0.20,
+    "hybridWorkEffectiveness": 0.20
+  },
+  "scoreBands": [
+    { "min": 9.0, "max": 10.0, "label": "Excellent", "color": "#10b981" },
+    { "min": 7.5, "max": 8.9, "label": "Good", "color": "#3b82f6" },
+    { "min": 6.0, "max": 7.4, "label": "Needs Improvement", "color": "#f59e0b" },
+    { "min": 0, "max": 5.9, "label": "Requires Attention", "color": "#ef4444" }
+  ],
+  "weeklyMeetingHourLimit": 10,
+  "weeklyLearningTarget": 3,
+  "expectedProductiveHoursPerDay": 7
+}
