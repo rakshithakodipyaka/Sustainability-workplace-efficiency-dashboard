@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
+import { useDashboard } from '../context/DashboardContext';
 import { getEmployeeKPIs, getOrganizationKPIs, getTeamKPIs } from '../services/kpiService';
 import { 
   getOfficeAttendance, 
@@ -114,6 +115,7 @@ export default function KPIDetail() {
   const { kpiId } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
+  const { filters } = useDashboard();
 
   const config = KPI_CONFIG[kpiId];
 
@@ -121,7 +123,7 @@ export default function KPIDetail() {
   const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
 
   // Load Organization & Team context
-  const orgData = useMemo(() => getOrganizationKPIs(), []);
+  const orgData = useMemo(() => getOrganizationKPIs(filters.dateRange), [filters.dateRange]);
   const allEmployees = useMemo(() => getEmployees(), []);
   const allManagers = useMemo(() => getManagers(), []);
   const courseCatalog = useMemo(() => getCourses(), []);
@@ -143,20 +145,20 @@ export default function KPIDetail() {
 
   // Employee KPI data
   const employeeKPIData = useMemo(() => {
-    return getEmployeeKPIs(activeEmployeeId);
-  }, [activeEmployeeId]);
+    return getEmployeeKPIs(activeEmployeeId, filters.dateRange);
+  }, [activeEmployeeId, filters.dateRange]);
 
   // Manager's own KPI and Team KPI
   const managerTeamData = useMemo(() => {
     if (user?.role === 'Manager') {
-      return getTeamKPIs(user.employeeId);
+      return getTeamKPIs(user.employeeId, filters.dateRange);
     }
     // If viewing an employee, get their manager's team data for benchmarking
     if (activeEmployee?.managerId) {
-      return getTeamKPIs(activeEmployee.managerId);
+      return getTeamKPIs(activeEmployee.managerId, filters.dateRange);
     }
     return null;
-  }, [user, activeEmployee]);
+  }, [user, activeEmployee, filters.dateRange]);
 
   // If KPI route is invalid
   if (!config) {

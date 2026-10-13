@@ -1,8 +1,10 @@
 import { useState, useMemo, useEffect } from 'react';
+import { useDashboard } from '../context/DashboardContext';
 import { getOrganizationKPIs } from '../services/kpiService';
 import { generateOrgRecommendations } from '../services/recommendationService';
 import ScoreGauge from '../components/ScoreGauge';
 import { getScoreColor } from '../utils/formatters';
+import { formatRangeLabel } from '../utils/dateRange';
 import {
   ChevronLeft,
   ChevronRight,
@@ -48,9 +50,10 @@ const CHART_COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#e
 const ExecutivePresentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [overviewMode, setOverviewMode] = useState(false);
+  const { filters } = useDashboard();
 
   // Compute organization KPI calculations
-  const orgKPIs = useMemo(() => getOrganizationKPIs(), []);
+  const orgKPIs = useMemo(() => getOrganizationKPIs(filters.dateRange), [filters.dateRange]);
   const orgRecs = useMemo(() => generateOrgRecommendations(orgKPIs), [orgKPIs]);
 
   // Derived datasets for slides
@@ -194,7 +197,7 @@ const ExecutivePresentation = () => {
               Sustainability &amp; Workplace Efficiency Dashboard
             </h1>
             <p style={{ fontSize: 20, color: 'var(--primary-light)', fontWeight: 600, marginBottom: 24 }}>
-              Weekly Performance Review — Oct 5–11, 2026
+              Weekly Performance Review — {formatRangeLabel(filters.dateRange)}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 32, maxWidth: 750 }}>
               <div style={{ background: 'var(--bg-primary)', padding: 16, borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
@@ -787,7 +790,7 @@ const ExecutivePresentation = () => {
             <span className="role-badge hr">HR Executive</span>
           </div>
           <p className="page-subtitle">
-            12-Slide Performance Briefing &bull; Oct 5–11, 2026 Telemetry Review
+            12-Slide Performance Briefing &bull; {formatRangeLabel(filters.dateRange)} Telemetry Review
           </p>
         </div>
 

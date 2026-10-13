@@ -44,6 +44,7 @@ import EmployeeTable from '../components/EmployeeTable';
 import { getOrganizationKPIs } from '../services/kpiService';
 import { getManagers, getEmployees } from '../services/dataService';
 import { getScoreColor, getScoreLabel, formatPercentage } from '../utils/formatters';
+import { formatRangeLabel } from '../utils/dateRange';
 import { useDashboard } from '../context/DashboardContext';
 import { useAuth } from '../hooks/useAuth';
 
@@ -146,7 +147,7 @@ const HRDashboard = () => {
   const { filters, updateFilter } = useDashboard();
 
   // Load calculated org KPI data and entity lists
-  const orgKPIs = useMemo(() => getOrganizationKPIs(), []);
+  const orgKPIs = useMemo(() => getOrganizationKPIs(filters.dateRange), [filters.dateRange]);
   const allManagersList = useMemo(() => getManagers(), []);
   const allEmployeesList = useMemo(() => getEmployees(), []);
 
@@ -241,7 +242,7 @@ const HRDashboard = () => {
               </span>
               <span>•</span>
               <span>
-                <strong>Evaluation Period:</strong> Oct 5 – Oct 11, 2026 (Week 41)
+                <strong>Evaluation Period:</strong> {formatRangeLabel(filters.dateRange)}
               </span>
               <span>•</span>
               <span>

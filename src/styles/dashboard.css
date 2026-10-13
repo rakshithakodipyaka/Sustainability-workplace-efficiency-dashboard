@@ -745,6 +745,16 @@
   min-width: 140px;
 }
 
+.filter-range-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 .filter-reset {
   padding: 6px 12px;
   border: 1px solid var(--border);

@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { useDashboard } from '../context/DashboardContext';
 import { canViewEmployee } from '../utils/permissions';
 import { getUserById, getCourses } from '../services/dataService';
 import { getEmployeeKPIs } from '../services/kpiService';
@@ -8,6 +9,7 @@ import KPICard from '../components/KPICard';
 import ScoreGauge from '../components/ScoreGauge';
 import ChartCard from '../components/ChartCard';
 import { getScoreColor, getScoreLabel } from '../utils/formatters';
+import { formatRangeLabel } from '../utils/dateRange';
 import { ArrowLeft, Shield, Award, Calendar, BookOpen, Clock, AlertCircle } from 'lucide-react';
 import { useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, Legend } from 'recharts';
@@ -15,6 +17,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 const EmployeeView = () => {
   const { employeeId } = useParams();
   const { user } = useAuth();
+  const { filters } = useDashboard();
   const navigate = useNavigate();
   
   const targetUser = useMemo(() => getUserById(employeeId), [employeeId]);
@@ -46,7 +49,7 @@ const EmployeeView = () => {
   }
   
   // Get all KPI data for this employee
-  const kpiData = useMemo(() => getEmployeeKPIs(employeeId), [employeeId]);
+  const kpiData = useMemo(() => getEmployeeKPIs(employeeId, filters.dateRange), [employeeId, filters.dateRange]);
   const learning = useMemo(() => getLearning(employeeId), [employeeId]);
   const hybrid = useMemo(() => getHybridWork(employeeId), [employeeId]);
   const attendance = useMemo(() => getOfficeAttendance(employeeId), [employeeId]);
@@ -139,7 +142,7 @@ const EmployeeView = () => {
         </div>
         <div className="overview-score-right">
           <div className="overview-score-title">Overall Performance</div>
-          <div className="overview-score-subtitle">Week of Oct 5 - Oct 11, 2026</div>
+          <div className="overview-score-subtitle">{formatRangeLabel(filters.dateRange)}</div>
           <div className="overview-kpi-bars">
             {Object.entries(kpiData.kpiScores).map(([key, score]) => (
               <div className="overview-kpi-row" key={key}>

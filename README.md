@@ -405,6 +405,13 @@ script (they are only re-exposed for the clearly-labelled demo quick-login butto
   Enter/Space) to open its detail page.
 - Click an employee to open their individual profile if the role permits it.
 - Filter HR views by manager/team, KPI category, day of week and score range.
+- **Period filter** (all dashboards): *This Week*, *Weekdays*, or a *Custom Range* with
+  From/To calendars constrained to the seeded week. The selection is global — it re-scopes
+  every KPI on every page.
+- Absolute targets **prorate** to the selected span so short ranges stay meaningful:
+  the meeting-hour limit scales by workdays ÷ 5 and the learning target by days ÷ 7
+  (a full week leaves both unchanged). Per-day metrics (attendance, productivity) are
+  simply filtered to the range.
 - Filters affect the visible charts, KPI calculations and summary metrics.
 - Switch between chart types where offered and reveal raw metric details behind a KPI.
 - Export reports to **CSV** and print reports and presentation slides (print stylesheet

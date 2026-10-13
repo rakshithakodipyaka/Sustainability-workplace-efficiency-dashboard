@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import KPICard from '../components/KPICard';
 import ScoreGauge from '../components/ScoreGauge';
 import ChartCard from '../components/ChartCard';
+import FilterBar from '../components/FilterBar';
 import { useAuth } from '../hooks/useAuth';
+import { useDashboard } from '../context/DashboardContext';
 import { getEmployeeKPIs } from '../services/kpiService';
 import { getLearning, getHybridWork, getOfficeAttendance, getMeetings, getCourses } from '../services/dataService';
 import { generateEmployeeRecommendations } from '../services/recommendationService';
 import { getScoreColor, getScoreLabel } from '../utils/formatters';
+import { formatRangeLabel } from '../utils/dateRange';
 import {
   BarChart,
   Bar,
@@ -65,13 +68,14 @@ const KPI_DESCRIPTIONS = {
 
 const EmployeeDashboard = () => {
   const { user } = useAuth();
+  const { filters } = useDashboard();
   const navigate = useNavigate();
 
   // Retrieve KPI and raw metrics for currently logged in employee
   const kpiData = useMemo(() => {
     if (!user?.employeeId) return null;
-    return getEmployeeKPIs(user.employeeId);
-  }, [user?.employeeId]);
+    return getEmployeeKPIs(user.employeeId, filters.dateRange);
+  }, [user?.employeeId, filters.dateRange]);
 
   const learning = useMemo(() => {
     if (!user?.employeeId) return { enrolled: [], weeklyLearningHours: [] };
@@ -208,6 +212,8 @@ const EmployeeDashboard = () => {
 
   return (
     <div>
+      <FilterBar showDayFilter={true} />
+
       {/* 1. Welcome Banner */}
       <div className="welcome-banner">
         <div className="welcome-title">Welcome back, {user.name}!</div>
@@ -216,7 +222,7 @@ const EmployeeDashboard = () => {
         </div>
         <div className="welcome-meta">
           <span>Employee ID: {user.employeeId}</span>
-          <span>Period: Week of Oct 5 - Oct 11, 2026</span>
+          <span>Period: {formatRangeLabel(filters.dateRange)}</span>
           {user.managerId && <span>Reporting Manager: {user.managerId}</span>}
         </div>
       </div>
@@ -677,7 +683,7 @@ const EmployeeDashboard = () => {
                 </div>
                 <div>
                   <div style={{ fontSize: 11, color: 'var(--text-tertiary)', fontStyle: 'italic', marginBottom: 8 }}>
-                    🎯 Impact: {rec.benefit}
+                     Impact: {rec.benefit}
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--text-secondary)' }}>
                     <span>Target Score: <strong>{rec.targetScore}</strong></span>

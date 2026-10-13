@@ -35,12 +35,12 @@ const insightIcon = (item) => {
   return <AlertTriangle size={14} />;
 };
 
-const buildInsights = (user) => {
+const buildInsights = (user, range) => {
   if (!user) return [];
   const insights = [];
 
   if (user.role === 'HR') {
-    const org = getOrganizationKPIs();
+    const org = getOrganizationKPIs(range);
     insights.push({
       id: 'org-average',
       tone: bandTone(org.orgAverage),
@@ -80,7 +80,7 @@ const buildInsights = (user) => {
     return insights;
   }
 
-  const mine = getEmployeeKPIs(user.employeeId);
+  const mine = getEmployeeKPIs(user.employeeId, range);
   const ranked = Object.entries(mine.kpiScores).sort((a, b) => a[1] - b[1]);
   const weakest = ranked[0];
   const strongest = ranked[ranked.length - 1];
@@ -146,7 +146,7 @@ const buildInsights = (user) => {
   }
 
   if (user.role === 'Manager') {
-    const team = getTeamKPIs(user.employeeId);
+    const team = getTeamKPIs(user.employeeId, range);
     insights.push({
       id: 'team-average',
       tone: bandTone(team.teamAverage),
@@ -161,12 +161,12 @@ const buildInsights = (user) => {
 
 const Topbar = () => {
   const { user, logout } = useAuth();
-  const { sidebarOpen, toggleSidebar } = useDashboard();
+  const { sidebarOpen, toggleSidebar, filters } = useDashboard();
   const navigate = useNavigate();
   const [panel, setPanel] = useState(null);
   const barRef = useRef(null);
 
-  const insights = useMemo(() => buildInsights(user), [user]);
+  const insights = useMemo(() => buildInsights(user, filters.dateRange), [user, filters.dateRange]);
 
   useEffect(() => {
     if (!panel) return undefined;

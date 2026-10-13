@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react';
 import { useAuth } from '../hooks/useAuth';
+import { useDashboard } from '../context/DashboardContext';
 import { getEmployeeKPIs, getTeamKPIs, getOrganizationKPIs } from '../services/kpiService';
+import { formatRangeLabel } from '../utils/dateRange';
 import {
   getEmployees,
   getManagers,
@@ -48,6 +50,7 @@ import {
 
 const Reports = () => {
   const { user } = useAuth();
+  const { filters } = useDashboard();
   const [activeTab, setActiveTab] = useState('kpi'); // 'kpi' | 'attendance' | 'meetings' | 'learning' | 'hybrid'
   const [searchQuery, setSearchQuery] = useState('');
   const [teamFilter, setTeamFilter] = useState('ALL');
@@ -75,9 +78,9 @@ const Reports = () => {
   const employeesWithKPIs = useMemo(() => {
     return scopedEmployees.map(emp => ({
       ...emp,
-      kpis: getEmployeeKPIs(emp.employeeId)
+      kpis: getEmployeeKPIs(emp.employeeId, filters.dateRange)
     }));
-  }, [scopedEmployees]);
+  }, [scopedEmployees, filters.dateRange]);
 
   // Unique teams/departments for filter dropdown
   const availableTeams = useMemo(() => {
@@ -414,7 +417,7 @@ const Reports = () => {
       <div className="print-header" style={{ display: 'none' }}>
         <h1 style={{ fontSize: 24, fontWeight: 700, margin: 0 }}>Experian Services - Weekly Performance Report</h1>
         <p style={{ fontSize: 13, color: '#666', margin: '4px 0 16px' }}>
-          Report Type: {activeTab.toUpperCase()} | Generated for: {user?.name} ({user?.role}) | Week: Oct 5 - Oct 11, 2026
+          Report Type: {activeTab.toUpperCase()} | Generated for: {user?.name} ({user?.role}) | Period: {formatRangeLabel(filters.dateRange)}
         </p>
       </div>
 

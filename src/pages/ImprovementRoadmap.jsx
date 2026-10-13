@@ -1,6 +1,8 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useAuth } from '../hooks/useAuth';
+import { useDashboard } from '../context/DashboardContext';
 import { getEmployeeKPIs, getTeamKPIs, getOrganizationKPIs } from '../services/kpiService';
+import { formatRangeLabel } from '../utils/dateRange';
 import { generateEmployeeRecommendations, generateTeamRecommendations, generateOrgRecommendations, getRecommendationStatus } from '../services/recommendationService';
 import RecommendationCard from '../components/RecommendationCard';
 import ScoreGauge from '../components/ScoreGauge';
@@ -8,6 +10,7 @@ import { Map, Target, Users, Building2, CheckCircle2, Clock, AlertTriangle, Laye
 
 const ImprovementRoadmap = () => {
   const { user } = useAuth();
+  const { filters } = useDashboard();
   const [managerTab, setManagerTab] = useState('team'); // 'team' | 'personal'
   const [priorityFilter, setPriorityFilter] = useState('ALL'); // 'ALL' | 'High' | 'Medium' | 'Low'
   const [statusFilter, setStatusFilter] = useState('ALL'); // 'ALL' | 'Not Started' | 'In Progress' | 'Completed'
@@ -50,7 +53,7 @@ const ImprovementRoadmap = () => {
     }
 
     if (user.role === 'Employee') {
-      const empKPIs = getEmployeeKPIs(user.employeeId);
+      const empKPIs = getEmployeeKPIs(user.employeeId, filters.dateRange);
       const recs = generateEmployeeRecommendations(user.employeeId, empKPIs).map(rec => ({
         ...rec,
         status: getRecommendationStatus(rec.id)
@@ -67,8 +70,8 @@ const ImprovementRoadmap = () => {
     }
 
     if (user.role === 'Manager') {
-      const personalKPIs = getEmployeeKPIs(user.employeeId);
-      const teamKPIs = getTeamKPIs(user.employeeId);
+      const personalKPIs = getEmployeeKPIs(user.employeeId, filters.dateRange);
+      const teamKPIs = getTeamKPIs(user.employeeId, filters.dateRange);
 
       const pRecs = generateEmployeeRecommendations(user.employeeId, personalKPIs).map(rec => ({
         ...rec,
@@ -95,7 +98,7 @@ const ImprovementRoadmap = () => {
     }
 
     // HR Role
-    const orgKPIs = getOrganizationKPIs();
+    const orgKPIs = getOrganizationKPIs(filters.dateRange);
     const orgRecs = generateOrgRecommendations(orgKPIs).map(rec => ({
       ...rec,
       status: getRecommendationStatus(rec.id)
@@ -109,7 +112,7 @@ const ImprovementRoadmap = () => {
       personalRecs: [],
       teamRecs: []
     };
-  }, [user, managerTab, refreshKey]);
+  }, [user, managerTab, refreshKey, filters.dateRange]);
 
   // Filter recommendations
   const filteredRecs = useMemo(() => {
@@ -178,7 +181,7 @@ const ImprovementRoadmap = () => {
               {score} <span style={{ fontSize: 13, fontWeight: 400, color: 'var(--text-tertiary)' }}>/ 10</span>
             </div>
             <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
-              Updated for week ending Oct 11, 2026
+              Updated for {formatRangeLabel(filters.dateRange)}
             </div>
           </div>
         </div>

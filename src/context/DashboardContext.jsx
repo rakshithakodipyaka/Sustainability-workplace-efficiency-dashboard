@@ -1,19 +1,19 @@
 import { createContext, useState, useContext } from 'react';
+import { DEFAULT_RANGE } from '../utils/dateRange';
 
 const DashboardContext = createContext(null);
 
+const buildInitialFilters = () => ({
+  selectedEmployee: null,
+  selectedManager: null,
+  selectedDay: null,
+  selectedKPI: null,
+  scoreRange: [0, 10],
+  dateRange: { ...DEFAULT_RANGE }
+});
+
 export const DashboardProvider = ({ children }) => {
-  const [filters, setFilters] = useState({
-    selectedEmployee: null,
-    selectedManager: null,
-    selectedDay: null,
-    selectedKPI: null,
-    scoreRange: [0, 10],
-    dateRange: {
-      start: '2026-10-05',
-      end: '2026-10-11'
-    }
-  });
+  const [filters, setFilters] = useState(buildInitialFilters);
 
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
@@ -21,18 +21,12 @@ export const DashboardProvider = ({ children }) => {
     setFilters(prev => ({ ...prev, [key]: value }));
   };
 
+  const setDateRange = (start, end) => {
+    updateFilter('dateRange', { start, end });
+  };
+
   const resetFilters = () => {
-    setFilters({
-      selectedEmployee: null,
-      selectedManager: null,
-      selectedDay: null,
-      selectedKPI: null,
-      scoreRange: [0, 10],
-      dateRange: {
-        start: '2026-10-05',
-        end: '2026-10-11'
-      }
-    });
+    setFilters(buildInitialFilters());
   };
 
   const toggleSidebar = () => setSidebarOpen(prev => !prev);
@@ -41,6 +35,7 @@ export const DashboardProvider = ({ children }) => {
     <DashboardContext.Provider value={{
       filters,
       updateFilter,
+      setDateRange,
       resetFilters,
       sidebarOpen,
       setSidebarOpen,

@@ -4,9 +4,12 @@ import KPICard from '../components/KPICard';
 import ScoreGauge from '../components/ScoreGauge';
 import ChartCard from '../components/ChartCard';
 import EmployeeTable from '../components/EmployeeTable';
+import FilterBar from '../components/FilterBar';
 import { useAuth } from '../hooks/useAuth';
+import { useDashboard } from '../context/DashboardContext';
 import { getEmployeeKPIs, getTeamKPIs } from '../services/kpiService';
 import { getScoreColor } from '../utils/formatters';
+import { formatRangeLabel } from '../utils/dateRange';
 import {
   BarChart,
   Bar,
@@ -56,19 +59,20 @@ const KPI_CONFIG = [
 
 const ManagerDashboard = () => {
   const { user } = useAuth();
+  const { filters } = useDashboard();
   const navigate = useNavigate();
   const [activeTrendMetric, setActiveTrendMetric] = useState('hours'); // 'hours' | 'tasks'
 
   // Fetch Manager's own KPIs and Team data
   const managerKPIs = useMemo(() => {
     if (!user?.employeeId) return null;
-    return getEmployeeKPIs(user.employeeId);
-  }, [user?.employeeId]);
+    return getEmployeeKPIs(user.employeeId, filters.dateRange);
+  }, [user?.employeeId, filters.dateRange]);
 
   const teamKPIs = useMemo(() => {
     if (!user?.employeeId) return null;
-    return getTeamKPIs(user.employeeId);
-  }, [user?.employeeId]);
+    return getTeamKPIs(user.employeeId, filters.dateRange);
+  }, [user?.employeeId, filters.dateRange]);
 
   // Direct Reports employee scores for BarChart
   const employeeScoresData = useMemo(() => {
@@ -296,6 +300,8 @@ const ManagerDashboard = () => {
 
   return (
     <div className="manager-dashboard" style={{ animation: 'fadeInUp 0.3s ease' }}>
+      <FilterBar showDayFilter={true} />
+
       {/* 1. Welcome Banner */}
       <div
         style={{
@@ -326,7 +332,7 @@ const ManagerDashboard = () => {
               >
                 Team Lead & Management View
               </span>
-              <span style={{ fontSize: '12px', opacity: 0.85 }}>Oct 5 - Oct 11, 2026</span>
+              <span style={{ fontSize: '12px', opacity: 0.85 }}>{formatRangeLabel(filters.dateRange)}</span>
             </div>
             <h1 style={{ fontSize: '28px', fontWeight: 800, margin: '0 0 6px 0', letterSpacing: '-0.02em' }}>
               Welcome back, {user.name}

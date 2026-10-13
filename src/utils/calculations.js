@@ -90,7 +90,7 @@ export const calculateEmployeeEngagement = (engagementData, officeUtilizationSco
 export const calculateLearningParticipation = (learningData) => {
   const enrolled = learningData.enrolled || [];
   const weeklyHours = learningData.weeklyLearningHours || [];
-  const weeklyTarget = 3; // configurable
+  const weeklyTarget = learningData.weeklyLearningTarget || 3; // configurable / prorated per range
   
   const totalEnrolled = enrolled.length;
   const totalCompleted = enrolled.filter(c => c.status === 'completed').length;
