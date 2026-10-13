@@ -412,7 +412,7 @@ const Reports = () => {
     <div className="reports-page">
       {/* Printable Report Header */}
       <div className="print-header" style={{ display: 'none' }}>
-        <h1 style={{ fontSize: 24, fontWeight: 700, margin: 0 }}>GreenTech Solutions - Weekly Performance Report</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 700, margin: 0 }}>Experian Services - Weekly Performance Report</h1>
         <p style={{ fontSize: 13, color: '#666', margin: '4px 0 16px' }}>
           Report Type: {activeTab.toUpperCase()} | Generated for: {user?.name} ({user?.role}) | Week: Oct 5 - Oct 11, 2026
         </p>

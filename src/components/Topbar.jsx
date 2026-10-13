@@ -216,7 +216,7 @@ const Topbar = () => {
           <Menu size={22} />
         </button>
         <div>
-          <div className="topbar-title">Sustainability & Workplace Efficiency</div>
+          <div className="topbar-title">Experian Services</div>
           <div className="topbar-date">
             <Calendar size={14} />
             Oct 5 - Oct 11, 2026

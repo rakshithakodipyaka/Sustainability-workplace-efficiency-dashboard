@@ -1,69 +1,75 @@
-import usersData from '../data/users.json';
-import organizationData from '../data/organization.json';
-import officeAttendanceData from '../data/officeAttendance.json';
-import meetingsData from '../data/meetings.json';
-import engagementData from '../data/engagement.json';
-import learningData from '../data/learning.json';
-import hybridWorkData from '../data/hybridWork.json';
-import kpiWeightsData from '../data/kpiWeights.json';
+import { getData } from './dataCache';
 
-export const getUsers = () => usersData;
-
-export const getUserById = (employeeId) => {
-  return usersData.find(u => u.employeeId === employeeId);
+const data = () => getData() || {
+  users: [],
+  organization: {},
+  officeAttendance: [],
+  meetings: [],
+  engagement: [],
+  learning: { courses: [], enrollments: [] },
+  hybridWork: [],
+  kpiWeights: {}
 };
 
-export const getOrganization = () => organizationData;
+export const getUsers = () => data().users;
+
+export const getUserById = (employeeId) => {
+  return data().users.find(u => u.employeeId === employeeId);
+};
+
+export const getOrganization = () => data().organization;
 
 export const getOfficeAttendance = (employeeId) => {
-  const record = officeAttendanceData.find(r => r.employeeId === employeeId);
+  const record = data().officeAttendance.find(r => r.employeeId === employeeId);
   return record ? record.records : [];
 };
 
-export const getAllOfficeAttendance = () => officeAttendanceData;
+export const getAllOfficeAttendance = () => data().officeAttendance;
 
 export const getMeetings = (employeeId) => {
-  const record = meetingsData.find(r => r.employeeId === employeeId);
+  const record = data().meetings.find(r => r.employeeId === employeeId);
   return record || { meetings: [], weeklyMeetingHourLimit: 10 };
 };
 
-export const getAllMeetings = () => meetingsData;
+export const getAllMeetings = () => data().meetings;
 
 export const getEngagement = (employeeId) => {
-  const record = engagementData.find(r => r.employeeId === employeeId);
+  const record = data().engagement.find(r => r.employeeId === employeeId);
   return record || { activities: [] };
 };
 
-export const getAllEngagement = () => engagementData;
+export const getAllEngagement = () => data().engagement;
 
 export const getLearning = (employeeId) => {
-  const enrollment = learningData.enrollments.find(e => e.employeeId === employeeId);
+  const learning = data().learning;
+  const enrollment = (learning.enrollments || []).find(e => e.employeeId === employeeId);
   return enrollment || { enrolled: [], weeklyLearningHours: [] };
 };
 
-export const getAllLearning = () => learningData;
+export const getAllLearning = () => data().learning;
 
-export const getCourses = () => learningData.courses;
+export const getCourses = () => data().learning.courses || [];
 
 export const getHybridWork = (employeeId) => {
-  const record = hybridWorkData.find(r => r.employeeId === employeeId);
+  const record = data().hybridWork.find(r => r.employeeId === employeeId);
   return record || { records: [] };
 };
 
-export const getAllHybridWork = () => hybridWorkData;
+export const getAllHybridWork = () => data().hybridWork;
 
-export const getKPIWeights = () => kpiWeightsData;
+export const getKPIWeights = () => data().kpiWeights;
 
 export const getTeamMembers = (managerId) => {
-  const manager = usersData.find(u => u.employeeId === managerId);
+  const users = data().users;
+  const manager = users.find(u => u.employeeId === managerId);
   if (!manager || !manager.directReports) return [];
-  return usersData.filter(u => manager.directReports.includes(u.employeeId));
+  return users.filter(u => manager.directReports.includes(u.employeeId));
 };
 
 export const getEmployees = () => {
-  return usersData.filter(u => u.role === 'Employee');
+  return data().users.filter(u => u.role === 'Employee');
 };
 
 export const getManagers = () => {
-  return usersData.filter(u => u.role === 'Manager');
+  return data().users.filter(u => u.role === 'Manager');
 };

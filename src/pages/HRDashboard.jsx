@@ -237,7 +237,7 @@ const HRDashboard = () => {
             </p>
             <div className="welcome-meta">
               <span>
-                <strong>Organization:</strong> {organization.name || 'GreenTech Solutions Pvt. Ltd.'}
+                <strong>Organization:</strong> {organization.name || 'Experian Services'}
               </span>
               <span>•</span>
               <span>

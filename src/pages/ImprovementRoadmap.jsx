@@ -104,7 +104,7 @@ const ImprovementRoadmap = () => {
       recommendations: orgRecs,
       score: orgKPIs.orgAverage,
       scoreLabel: 'Organization Average',
-      subtitle: `Strategic interventions across all departments for ${orgKPIs.organization?.name || 'GreenTech Solutions'}`,
+      subtitle: `Strategic interventions across all departments for ${orgKPIs.organization?.name || 'Experian Services'}`,
       roleIcon: <Building2 size={24} color="var(--primary-light)" />,
       personalRecs: [],
       teamRecs: []

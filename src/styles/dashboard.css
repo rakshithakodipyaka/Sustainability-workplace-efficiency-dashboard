@@ -57,15 +57,16 @@
 }
 
 .login-logo {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 16px;
-  color: white;
+}
+
+.login-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .login-title {

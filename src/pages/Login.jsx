@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import { Eye, EyeOff, Leaf, AlertCircle, Info } from 'lucide-react';
+import { api } from '../services/api';
+import { Eye, EyeOff, AlertCircle, Info } from 'lucide-react';
 import '../styles/dashboard.css';
 
 const Login = () => {
@@ -12,6 +13,11 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [demoAccounts, setDemoAccounts] = useState([]);
+
+  useEffect(() => {
+    api.get('/auth/demo-accounts').then(setDemoAccounts).catch(() => setDemoAccounts([]));
+  }, []);
   
   useEffect(() => {
     if (user) {
@@ -24,7 +30,7 @@ const Login = () => {
     }
   }, [user, navigate]);
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     
@@ -38,26 +44,21 @@ const Login = () => {
     }
     
     setLoading(true);
-    // Simulate brief loading
-    setTimeout(() => {
-      const result = login(employeeId.trim().toUpperCase(), password);
-      if (!result.success) {
-        setError(result.error);
-      }
-      setLoading(false);
-    }, 300);
+    const result = await login(employeeId.trim().toUpperCase(), password);
+    if (!result.success) {
+      setError(result.error);
+    }
+    setLoading(false);
   };
   
-  const handleQuickLogin = (id, pwd) => {
+  const handleQuickLogin = async (id, pwd) => {
     setEmployeeId(id);
     setPassword(pwd);
     setError('');
-    setTimeout(() => {
-      const result = login(id, pwd);
-      if (!result.success) {
-        setError(result.error);
-      }
-    }, 200);
+    const result = await login(id, pwd);
+    if (!result.success) {
+      setError(result.error);
+    }
   };
   
   return (
@@ -65,9 +66,9 @@ const Login = () => {
       <div className="login-container">
         <div className="login-header">
           <div className="login-logo">
-            <Leaf size={32} />
+            <img src="/experian-logo.svg" alt="Experian Services" />
           </div>
-          <h1 className="login-title">S&WE Dashboard</h1>
+          <h1 className="login-title">Experian Services</h1>
           <p className="login-subtitle">Sustainability & Workplace Efficiency</p>
         </div>
         
@@ -135,22 +136,17 @@ const Login = () => {
         <div className="quick-login">
           <div className="quick-login-title">Quick Login</div>
           <div className="quick-login-grid">
-            <button type="button" className="quick-login-btn" onClick={() => handleQuickLogin('HR001', 'hr@demo123')}>
-              Priya Sharma
-              <span className="role">HR001 · HR</span>
-            </button>
-            <button type="button" className="quick-login-btn" onClick={() => handleQuickLogin('MGR001', 'mgr@demo123')}>
-              Rahul Verma
-              <span className="role">MGR001 · Manager</span>
-            </button>
-            <button type="button" className="quick-login-btn" onClick={() => handleQuickLogin('MGR002', 'mgr@demo123')}>
-              Ananya Iyer
-              <span className="role">MGR002 · Manager</span>
-            </button>
-            <button type="button" className="quick-login-btn" onClick={() => handleQuickLogin('EMP001', 'emp@demo123')}>
-              Aditi Reddy
-              <span className="role">EMP001 · Employee</span>
-            </button>
+            {demoAccounts.map(account => (
+              <button
+                key={account.employeeId}
+                type="button"
+                className="quick-login-btn"
+                onClick={() => handleQuickLogin(account.employeeId, account.password)}
+              >
+                {account.name}
+                <span className="role">{account.employeeId} · {account.role}</span>
+              </button>
+            ))}
           </div>
         </div>
       </div>

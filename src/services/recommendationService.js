@@ -1,24 +1,15 @@
 import { getScoreBand } from '../utils/calculations';
-
-const STORAGE_KEY = 'recommendation_statuses';
+import { getData, setRecommendationStatus } from './dataCache';
+import { api } from './api';
 
 const getStoredStatuses = () => {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return stored ? JSON.parse(stored) : {};
-  } catch {
-    return {};
-  }
-};
-
-const saveStatus = (recId, status) => {
-  const statuses = getStoredStatuses();
-  statuses[recId] = status;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(statuses));
+  const data = getData();
+  return (data && data.recommendationStatuses) || {};
 };
 
 export const updateRecommendationStatus = (recId, status) => {
-  saveStatus(recId, status);
+  setRecommendationStatus(recId, status);
+  api.put(`/recommendation-statuses/${encodeURIComponent(recId)}`, { status }).catch(() => {});
 };
 
 export const getRecommendationStatus = (recId) => {

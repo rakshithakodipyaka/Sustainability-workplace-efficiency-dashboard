@@ -6,8 +6,9 @@ engagement and learning participation through interactive KPI dashboards.
 
 It ships with one week of realistic simulated data (**Monday 5 October 2026 – Sunday
 11 October 2026**) for **13 users** across **three roles**: HR, Manager and Employee.
-Every KPI, chart and score is **calculated at runtime from the local JSON dataset** —
-no chart value is hardcoded.
+All data is stored in a local **SQLite** database and served through a small **Express
+REST API**; every KPI, chart and score is **calculated at runtime from data returned by
+that API** — no chart value is hardcoded.
 
 ---
 
@@ -27,8 +28,8 @@ no chart value is hardcoded.
 > Windows `.msi` installer), then **close and reopen your terminal** and confirm
 > `node --version` prints a version.
 
-No database, no backend server, no paid API and no external authentication service are
-required.
+No external database service, cloud backend, paid API or external authentication
+provider is required. The backend and the SQLite database both run locally.
 
 ## Step 1 — Go to the project folder
 
@@ -45,13 +46,16 @@ npm install
 This installs React, React Router, Recharts, Lucide React and Vite. It creates the
 `node_modules` folder. You only need to run this again if `package.json` changes.
 
-## Step 3 — Start the development server
+## Step 3 — Start the development servers
 
 ```bash
 npm run dev
 ```
 
-Vite starts on a **fixed port** and opens your browser automatically:
+This starts **both** processes together:
+
+- the **Express API** on <http://localhost:4000> (auto-seeds the SQLite database on first run)
+- **Vite** on <http://localhost:3000>, which opens your browser automatically and proxies `/api` to the API server
 
 ### http://localhost:3000
 
@@ -73,13 +77,17 @@ Run all commands from the project root folder.
 | Command | What it does |
 | --- | --- |
 | `npm install` | Install all dependencies (run once, after cloning) |
-| `npm run dev` | Start the development server at <http://localhost:3000> |
+| `npm run dev` | Start the API (port 4000) **and** the Vite dev server (port 3000) together |
+| `npm run server` | Start only the Express API server (port 4000) |
+| `npm run web` | Start only the Vite dev server (port 3000) |
+| `npm run seed` | (Re)build the SQLite database from `src/data/*.json` (only if empty) |
+| `npm run seed:force` | Force a full reseed, overwriting all data and saved statuses |
 | `npm run build` | Create an optimised production build in `dist/` |
 | `npm run preview` | Serve the production build locally to test it |
 
-**Port already in use?** The port is set in `vite.config.js` (`server.port = 3000`).
-Close the other process or change `3000` to another value such as `5173`, then run
-`npm run dev` again.
+**Port already in use?** The frontend port is set in `vite.config.js` (`server.port = 3000`)
+and the API port in `server/index.js` (default `4000`, overridable with the `PORT`
+environment variable). Close the other process or change the value, then run again.
   
 ---
 
@@ -129,10 +137,12 @@ All employee accounts use the password **`emp@demo123`**.
 | `EMP001` / `emp@demo123` | Only Aditi Reddy's personal dashboard — no other employee is visible |
 | `EMP009` / `emp@demo123` | Only Pooja Nair's records, showing a low-scoring profile with improvement recommendations |
 
-> **Demo authentication only.** These passwords are stored in plain text in
-> `src/data/users.json` so the demo can run with no backend. Passwords are removed from
-> the session object before it is stored. This is **not** production-safe authentication —
-> never store real credentials this way.
+> **Demo authentication only.** Passwords are stored as **bcrypt hashes** in the SQLite
+> database and verified server-side by `POST /api/auth/login`, which returns an opaque
+> session token. The plain-text demo passwords below exist only to seed the database and
+> power the Quick Login buttons (served by `GET /api/auth/demo-accounts`). The token is
+> demo-grade: there is no expiry or refresh. Do **not** use this as-is for production or
+> with real credentials.
 
 ---
 
@@ -145,9 +155,11 @@ All employee accounts use the password **`emp@demo123`**.
 - **Icons:** Lucide React
 - **Routing:** React Router v6
 - **State:** React Context API (`AuthContext`, `DashboardContext`)
-- **Data:** local JSON files imported into the bundle
-- **Persistence:** `localStorage` for demo-only interactive state
-- **Backend:** none
+- **Backend:** Node.js + Express REST API (`server/`)
+- **Database:** SQLite via `better-sqlite3` (`server/data/dashboard.db`), seeded from `src/data/*.json`
+- **Auth:** bcrypt-hashed passwords, server-issued opaque session tokens (`Authorization: Bearer`)
+- **Data flow:** the frontend fetches all datasets from `GET /api/datasets` after login and caches them in memory; KPI maths still runs client-side over the fetched data
+- **Persistence:** recommendation statuses are stored in SQLite (server-side); only the session token is kept in `localStorage`
 
 ---
 
@@ -294,7 +306,9 @@ reported separately and are never silently mixed into the employee average.
 
 # DATA FILES
 
-All data lives in `src/data/` and is joined on `employeeId`.
+The `src/data/` files are the **seed source**. `npm run seed` (or the first API start)
+loads them into the SQLite database; the running frontend reads data only from the API and
+does not bundle these JSON files. All tables are joined on `employeeId`.
 
 | File | Contents |
 | --- | --- |
@@ -314,6 +328,58 @@ files plus weekly learning hours. Weekend days are marked as non-working.
 high performers, a strong learner with low office attendance, an employee with meeting
 overload, an employee with high attendance but low engagement, balanced hybrid
 productivity, and employees needing improvement.
+
+---
+
+# BACKEND & DATABASE
+
+The backend lives in `server/` and is a small Express app backed by SQLite
+(`server/data/dashboard.db`, generated and git-ignored).
+
+| File | Purpose |
+| --- | --- |
+| `server/db.js` | Opens the SQLite database, creates the schema, checks whether it is seeded |
+| `server/seed.js` | Reads `src/data/*.json`, hashes passwords and writes everything into SQLite |
+| `server/index.js` | Express app: auth middleware, role-filtered datasets and recommendation-status routes |
+
+### Configuration (optional `.env`)
+
+The server runs with **no `.env` file**: dotenv is a no-op when the file is missing and
+every setting falls back to a built-in default. Copy `.env.example` to `.env` only if you
+want to override:
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `PORT` | `4000` | Port the Express API listens on |
+| `DB_PATH` | `server/data/dashboard.db` | SQLite file path (relative paths resolve from the project root) |
+
+`.env` is git-ignored; `.env.example` is committed as a template.
+
+Tables: `employees`, `attendance`, `meetings`, `activities`, `courses`, `enrollments`,
+`learning_hours`, `hybrid_records`, `org_settings`, `kpi_settings`, `sessions`,
+`recommendation_statuses`. Manager `directReports`, per-person daily records and config
+arrays are reassembled into the exact shapes the frontend expects.
+
+### API endpoints
+
+| Method | Endpoint | Auth | Purpose |
+| --- | --- | --- | --- |
+| `POST` | `/api/auth/login` | no | Verify credentials, return `{ token, user }` |
+| `GET` | `/api/auth/me` | yes | Return the current user for a token |
+| `POST` | `/api/auth/logout` | yes | Invalidate the current token |
+| `GET` | `/api/auth/demo-accounts` | no | Quick-login accounts for the demo login page |
+| `GET` | `/api/datasets` | yes | **All datasets, filtered to what the caller may see** |
+| `GET` | `/api/recommendation-statuses` | yes | Current recommendation statuses |
+| `PUT` | `/api/recommendation-statuses/:recId` | yes | Update one recommendation status |
+| `GET` | `/api/health` | no | Liveness check |
+
+**Authorisation is enforced on the server.** `GET /api/datasets` returns only the rows the
+signed-in role may see — HR gets everyone, a Manager gets themselves plus their own direct
+reports, an Employee gets only themselves. The client-side checks in `src/utils/permissions.js`
+remain as a second layer.
+
+Passwords are stored as bcrypt hashes; the plain-text demo passwords never leave the seed
+script (they are only re-exposed for the clearly-labelled demo quick-login buttons).
 
 ---
 
@@ -361,13 +427,19 @@ src/
                  ExecutivePresentation, Profile, NotFound
   context/       AuthContext, DashboardContext
   hooks/         useAuth, useKPIData
-  services/      dataService, kpiService, recommendationService, exportService
+  services/      api, dataCache, dataService, kpiService, recommendationService, exportService
   utils/         calculations, formatters, permissions
   data/          users / organization / officeAttendance / meetings / engagement /
-                 learning / hybridWork / kpiWeights (.json)
+                 learning / hybridWork / kpiWeights (.json — seed source only)
   styles/        global.css, dashboard.css, components.css
   App.jsx
   main.jsx
+
+server/
+  db.js          SQLite connection + schema
+  seed.js        loads src/data/*.json into SQLite
+  index.js       Express API (auth, datasets, recommendation statuses)
+  data/          generated SQLite database (git-ignored)
 ```
 
 Data, calculation logic, components and page layouts are kept separate: pages never contain
@@ -385,18 +457,20 @@ scoring maths and services never contain markup.
 | Blank page after start | Confirm you opened **http://localhost:3000** (not a `file://` path). Hard refresh with `Ctrl + Shift + R`. |
 | `Cannot find module` errors | Delete `node_modules` and `package-lock.json`, then run `npm install` again. |
 | Login says "Employee ID not found" | Use an exact ID from the credentials table above, e.g. `HR001`, `MGR001`, `EMP001`. |
-| Recommendation statuses look stale | They are stored in browser `localStorage`. Clear site data for `localhost` to reset them. |
+| Recommendation statuses look stale | They are stored in SQLite. Re-run `npm run seed:force` to reset all data and statuses. |
+| Login fails with a network/connection error | The API server is not running. Start it with `npm run dev` (runs both) or `npm run server`, then retry. |
 
 ---
 
 # LIMITATIONS OF THIS DEMO
 
-- **Demo authentication.** Passwords are plain text in `users.json` and sessions live in
-  `localStorage`. There is no token, expiry, server-side verification or password hashing.
-  Suitable for a local demonstration only.
-- **No backend.** All data is bundled at build time from local JSON files. Browser changes
-  (recommendation statuses) are stored in `localStorage` and **do not rewrite the JSON
-  source files**. Clearing storage resets them.
+- **Demo authentication.** Passwords are bcrypt hashes in SQLite and login is verified
+  server-side, but the session token has no expiry or refresh, the demo passwords are
+  exposed by `/api/auth/demo-accounts`, and there is no HTTPS. Suitable for a local
+  demonstration only.
+- **Local backend only.** The API and SQLite database run on your machine. Recommendation
+  statuses are written to SQLite, but the underlying `src/data/*.json` seed files are not
+  rewritten — re-running `npm run seed:force` resets statuses and data.
 - **Simulated data.** All metrics are generated for demonstration. They do not describe any
   real organization, and no conclusion should be drawn about real employee value, morale or
   productivity. Engagement and attendance scores are indicators, not measures of an
@@ -405,8 +479,9 @@ scoring maths and services never contain markup.
   `organization.json` and are explicitly labelled as estimates.
 - **Single-week window.** The dataset covers one week, so trends are day/week based rather
   than multi-month.
-- **Client-side only.** There is no server-side authorization; production use would require
-  a real backend with server-enforced access control.
+- **Demo-grade API.** Authorisation (including role filtering of `/api/datasets`) is
+  enforced by the local Express server, which is enough for a demo but is not a hardened
+  production gateway (no rate limiting, token expiry, audit logging or HTTPS).
 
 ---
 

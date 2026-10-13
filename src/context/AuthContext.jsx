@@ -1,5 +1,6 @@
-import { createContext, useState, useEffect } from 'react';
-import usersData from '../data/users.json';
+import { createContext, useState, useEffect, useCallback } from 'react';
+import { api, getToken, setToken, clearToken } from '../services/api';
+import { hydrate, clear as clearCache } from '../services/dataCache';
 
 export const AuthContext = createContext(null);
 
@@ -8,43 +9,53 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check localStorage for existing session
-    const storedUser = localStorage.getItem('dashboard_user');
-    if (storedUser) {
-      try {
-        setUser(JSON.parse(storedUser));
-      } catch {
-        localStorage.removeItem('dashboard_user');
+    let cancelled = false;
+
+    const boot = async () => {
+      if (!getToken()) {
+        setLoading(false);
+        return;
       }
-    }
-    setLoading(false);
+      try {
+        const { user: currentUser } = await api.get('/auth/me');
+        await hydrate();
+        if (!cancelled) setUser(currentUser);
+      } catch {
+        clearToken();
+        clearCache();
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    };
+
+    boot();
+    return () => { cancelled = true; };
   }, []);
 
-  const login = (employeeId, password) => {
-    const foundUser = usersData.find(
-      u => u.employeeId === employeeId && u.password === password
-    );
-    
-    if (foundUser) {
-      const userData = { ...foundUser };
-      delete userData.password;
-      setUser(userData);
-      localStorage.setItem('dashboard_user', JSON.stringify(userData));
-      return { success: true, user: userData };
+  const login = useCallback(async (employeeId, password) => {
+    try {
+      const result = await api.post('/auth/login', { employeeId, password });
+      setToken(result.token);
+      await hydrate();
+      setUser(result.user);
+      return { success: true, user: result.user };
+    } catch (err) {
+      clearToken();
+      clearCache();
+      return { success: false, error: err.message };
     }
-    
-    // Check if employee ID exists
-    const userExists = usersData.find(u => u.employeeId === employeeId);
-    if (!userExists) {
-      return { success: false, error: 'Employee ID not found. Please check your credentials.' };
-    }
-    return { success: false, error: 'Incorrect password. Please try again.' };
-  };
+  }, []);
 
-  const logout = () => {
+  const logout = useCallback(async () => {
+    try {
+      await api.post('/auth/logout');
+    } catch {
+      // ignore network errors on logout
+    }
+    clearToken();
+    clearCache();
     setUser(null);
-    localStorage.removeItem('dashboard_user');
-  };
+  }, []);
 
   return (
     <AuthContext.Provider value={{ user, login, logout, loading }}>

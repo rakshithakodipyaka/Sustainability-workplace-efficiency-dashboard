@@ -3,7 +3,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useDashboard } from '../context/DashboardContext';
 import {
   LayoutDashboard, Building2, Users, CalendarCheck, BookOpen,
-  Laptop, Map, FileText, Presentation, User, LogOut, Leaf,
+  Laptop, Map, FileText, Presentation, User, LogOut,
   BarChart3, Target
 } from 'lucide-react';
 
@@ -54,10 +54,10 @@ const Sidebar = () => {
     <nav className={`sidebar ${sidebarOpen ? 'open' : 'collapsed'}`}>
       <div className="sidebar-header">
         <div className="sidebar-logo">
-          <Leaf size={22} />
+          <img src="/experian-logo.svg" alt="Experian Services" />
         </div>
         <div className="sidebar-brand">
-          S&WE Dashboard
+          Experian Services
           <span>Sustainability & Efficiency</span>
         </div>
       </div>
