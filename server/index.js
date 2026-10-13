@@ -248,12 +248,14 @@ const buildDatasets = (me) => {
 app.post('/api/auth/login', (req, res) => {
   const { employeeId, password } = req.body || {};
   if (!employeeId || !password) {
-    return res.status(400).json({ error: 'Employee ID and password are required.' });
+    return res.status(400).json({ error: 'Employee ID (or email) and password are required.' });
   }
-  const id = String(employeeId).trim().toUpperCase();
-  const employee = db.prepare('SELECT * FROM employees WHERE employee_id = ?').get(id);
+  const raw = String(employeeId).trim();
+  const employee = db
+    .prepare('SELECT * FROM employees WHERE employee_id = ? OR lower(email) = lower(?)')
+    .get(raw.toUpperCase(), raw);
   if (!employee) {
-    return res.status(401).json({ error: 'Employee ID not found. Please check your credentials.' });
+    return res.status(401).json({ error: 'Employee ID or email not found. Please check your credentials.' });
   }
   if (!bcrypt.compareSync(String(password), employee.password_hash)) {
     return res.status(401).json({ error: 'Incorrect password. Please try again.' });

@@ -44,7 +44,7 @@ const Login = () => {
     }
     
     setLoading(true);
-    const result = await login(employeeId.trim().toUpperCase(), password);
+    const result = await login(employeeId.trim(), password);
     if (!result.success) {
       setError(result.error);
     }
@@ -74,13 +74,13 @@ const Login = () => {
         
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label" htmlFor="employeeId">Employee ID</label>
+            <label className="form-label" htmlFor="employeeId">Employee ID or Email</label>
             <div className="form-input-wrapper">
               <input
                 id="employeeId"
                 type="text"
                 className={`form-input ${error && !employeeId ? 'error' : ''}`}
-                placeholder="e.g. HR001, MGR001, EMP001"
+                placeholder="e.g. HR001 or priya.sharma@experian.com"
                 value={employeeId}
                 onChange={e => { setEmployeeId(e.target.value); setError(''); }}
                 autoComplete="username"
